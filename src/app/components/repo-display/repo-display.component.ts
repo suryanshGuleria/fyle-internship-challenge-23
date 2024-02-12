@@ -13,8 +13,9 @@ export class RepoDisplayComponent implements OnInit {
   constructor(private dataService:DataService){
   }
 
-  ngOnInit(): void {
-    this.repoData = this.dataService.getRepoData();
-    console.log(this.repoData);
+  async ngOnInit(): Promise<void> {
+    this.repoData = await this.dataService.repoData;
+    }
+    
   }
-}
+

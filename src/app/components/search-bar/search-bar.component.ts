@@ -7,35 +7,46 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit{
-  username:string = 'postmodern';
+export class SearchBarComponent implements OnInit {
+  username: string = 'suryanshGuleria';
 
-  constructor(private apiService:ApiService, private dataService:DataService){
+  constructor(private apiService: ApiService, private dataService: DataService) { }
+
+  ngOnInit(): void {
+    this.fetchData();
+  }
+
+  onSubmit(): void {
+    this.fetchData();
   }
 
 
-  ngOnInit(): void {
+  //fetching userData and repoData
+  private fetchData(): void {
+    //setting loadin state for skeleton loader
+    this.dataService.setLoadingState(true);
     this.apiService.fetchUserData(this.username)
-       .subscribe({
+      .subscribe({
         next: (userData) => {
-          console.log(userData);
           this.dataService.setUserData(userData);
         },
         error: (err) => {
           console.error(`Following Error occured: ${err}`);
         }
-       })
+      });
 
-       this.apiService.fetchReposData(this.username)
-       .subscribe({
+    this.apiService.fetchReposData(this.username)
+      .subscribe({
         next: (repoData) => {
-          console.log(repoData);
           this.dataService.setUserData(repoData);
         },
         error: (err) => {
           console.error(`Following Error occured: ${err}`);
+        },
+        complete: ()=>{
+          //setting loading state back to false
+          this.dataService.setLoadingState(false);
         }
-       })
-
+      });
   }
 }

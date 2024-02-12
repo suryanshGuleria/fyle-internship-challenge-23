@@ -6,35 +6,25 @@ import { repoModel } from '../models/repo-model';
   providedIn: 'root'
 })
 export class DataService {
-  private userData: userModel ={};
-  private repoData: repoModel ={};
-  private isLoading:boolean = false;
+  userData: userModel = {};
+  repoData: repoModel = {};
+  isLoading: boolean = false;
 
   constructor() { }
 
   // Data Setters
-  setUserData(data:userModel){
+  async setUserData(data: userModel) {
     this.userData = data;
+    console.log(this.userData);
   }
 
-  setRepoData(data:userModel){
+  async setRepoData(data: repoModel) {
     this.repoData = data;
+    console.log(this.repoData);
   }
 
-  setLoadingState(value:boolean){
+  async setLoadingState(value: boolean) {
     this.isLoading = value;
-  }
-
-  //Data Getters
-  getUserData(){
-    return this.userData;
-  }
-
-  getRepoData(){
-    return this.repoData;
-  }
-
-  getLoadingState(){
-    return this.isLoading;
+    console.log(this.isLoading)
   }
 }

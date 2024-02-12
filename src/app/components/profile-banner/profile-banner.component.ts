@@ -13,8 +13,8 @@ export class ProfileBannerComponent implements OnInit{
     constructor(private dataService:DataService){
     }
 
-    ngOnInit(): void {
-      this.userData = this.dataService.getUserData();
-      console.log(this.userData);
+   ngOnInit():void {
+    this.userData = this.dataService.userData;
+    console.log(this.dataService.userData);
     }
 }

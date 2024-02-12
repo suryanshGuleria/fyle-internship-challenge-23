@@ -1,4 +1,19 @@
-<h1 class="text-center">Main App Component</h1>
-<!-- <app-demo></app-demo> -->
-<app-profile-banner></app-profile-banner>
-<app-repo-display></app-repo-display>
+<div class="wrapper p-5">
+  <h1
+    class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+  >
+    DevDetective
+  </h1>
+  <app-search-bar></app-search-bar>
+  <div
+    class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <div *ngIf="isLoading">
+      <p>skeleton loader</p>
+    </div>
+    <div *ngIf="!isLoading">
+      <app-profile-banner></app-profile-banner>
+      <app-repo-display></app-repo-display>
+    </div>
+  </div>
+</div>

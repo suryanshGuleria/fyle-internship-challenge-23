@@ -18,9 +18,9 @@ export class ApiService {
     private httpClient: HttpClient
   ) { }
 
-  fetchUserData(githubUsername: string) {
+  fetchUserData(githubUsername: string){
     const getUserUrl:string = `${this.baseUrl}${githubUsername}`;
-    return this.httpClient.get<userModel>(getUserUrl);
+    return this.httpClient.get(getUserUrl);
   }
 
   // implement getRepos method by referring to the documentation. Add proper types for the return type and params 

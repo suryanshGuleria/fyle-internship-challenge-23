@@ -9,6 +9,8 @@ import { ProfileBannerComponent } from './components/profile-banner/profile-bann
 import { RepoDisplayComponent } from './components/repo-display/repo-display.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
+import { DataService } from './services/data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
