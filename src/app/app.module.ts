@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from  '@angular/common/http';
-import { DemoComponent } from './demo/demo.component';
+
 import { FormsModule } from '@angular/forms';
+import { DemoComponent } from './components/demo/demo.component';
 
 @NgModule({
   declarations: [

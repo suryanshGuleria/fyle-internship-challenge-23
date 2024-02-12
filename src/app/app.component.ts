@@ -6,12 +6,13 @@ import { ApiService } from './services/api.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  constructor(
-    private apiService: ApiService
-  ) {}
+export class AppComponent{
+  //to use type implements onit
+  // constructor(
+  //   private apiService: ApiService
+  // ) {}
 
-  ngOnInit() {
-    this.apiService.getUser('johnpapa').subscribe(console.log);
-  }
+  // ngOnInit() {
+  //   this.apiService.getUser('johnpapa').subscribe(console.log);
+  // }
 }
