@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from  '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
-import { DemoComponent } from './components/demo/demo.component';
+import { ProfileBannerComponent } from './components/profile-banner/profile-banner.component';
+import { RepoDisplayComponent } from './components/repo-display/repo-display.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent
+    ProfileBannerComponent,
+    RepoDisplayComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
